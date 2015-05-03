@@ -25,7 +25,6 @@ module.exports = function(grunt) {
     },
     watchify: {
       options: {
-        keepalive: true,
         callback: function(b) {
           // // b.add();
           // b.require();
@@ -39,12 +38,42 @@ module.exports = function(grunt) {
         src: [ './src/**/*.js', './src/**/*.jsx' ],
         dest: 'build/app.js'
       }
+    },
+    watch: {
+      jsx: {
+        files: 'build/**/*.js',
+        options: {
+          livereload: 35729
+        }
+      },
+      html: {
+        files: 'index.html',
+        options: {
+          livereload: 35729
+        }
+      }
+    },
+    connect: {
+      options: {
+        port: 3000,
+        hostname: '0.0.0.0',
+        livereload: 35729,
+      },
+      livereload: {
+        options: {
+          open: true,
+        }
+      }
     }
   });
 
+  grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-react');
   grunt.loadNpmTasks('grunt-browserify');
   grunt.loadNpmTasks('grunt-watchify');
+  grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-serve');
 
-  grunt.registerTask('default', ['watchify']);
+
+  grunt.registerTask('default', ['watchify', 'connect', 'watch']);
 };

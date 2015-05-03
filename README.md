@@ -19,5 +19,4 @@ $ npm install -g grunt-cli
 ```bash
 $ grunt
 ```
-
-3. Open index.html
+This should start a basic server on port 3000 and open your default browser.

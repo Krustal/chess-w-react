@@ -1,5 +1,4 @@
 var classNames = require('classnames');
-var cat = 'meow';
 
 var Checker = React.createClass({
   render: function() {
