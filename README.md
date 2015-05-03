@@ -7,10 +7,17 @@ Playing around with React by creating a simple chess game. (starting with checke
 For now these are just static files, working on easier startup in a future
 commit.
 
-1. Watch JSX files
+1. Install Node & NPM [https://nodejs.org/download/]
 
+2. install npm modules & grunt cli
 ```bash
-jsx -x jsx --watch src/ build/
+$ npm install
+$ npm install -g grunt-cli
 ```
 
-2. Open index.html
+3. Run grunt
+```bash
+$ grunt
+```
+
+3. Open index.html
